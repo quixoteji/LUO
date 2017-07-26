@@ -1,5 +1,10 @@
 # Efficient Secure Outsoucing of Large-scale Nonlinear Programming with Nonlinear Constraints
 
+## Reqirements
+- numpy
+- scipy
+- sympy
+
 ## GPM (Gradient Projection Method)
 
 Objective: min f(x)
