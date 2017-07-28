@@ -6,8 +6,8 @@ from sympy import Symbol
 from sympy import symbols
 
 def main():
-    init_x = 0
-    gamma = 0
+    init_x = [1,1,1]
+    gamma = 0.2
 
     x1 = Symbol("x1")
     x2 = Symbol("x2")
@@ -21,28 +21,11 @@ def main():
     b = [9, 11, 10, 13]
     num = 3
 
-    a = GPM(init_x, gamma, f, h, b, num)
+    a = GPM(init_x=init_x, gamma=gamma, f=f, h=h, b=b, num=num)
 
-    x = [1,2,3]
-    # Test Gradient of N
-    # b = Nmatrix(h, num).N_calculation(x)
-    # print(b)
-
-    # test = a.N()
-
-    # c = Nmatrix(test, num).N_calculation(x)
-    # print(c)
-
-    f_test = a.delta_f()
-    f_v = Fvector(f,num).f_calculation(x)
-    print(f)
-    print(f_test)
-    print(f_v)
-    
-    # t = 'x1'
-    # a = f.subs(t, 1)
-    # b = a.subs(x2, 2)
-    # c = b.subs(x3, 3)
+    (x_min, f_min) = a.loop()
+    print(x_min, f_min)
+  
 
 
 if __name__ == '__main__':
