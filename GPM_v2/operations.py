@@ -121,7 +121,8 @@ def decision(s):
     s1 = s**2
     s2 = sum(s1[0].tolist())
     s3 = sqrt(s2)
-    if s3 < 1:
+    print('S:',s3)
+    if s3 < 10:
         return True
     else:
         return False

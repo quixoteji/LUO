@@ -56,9 +56,10 @@ class GPM(object):
         print(f_k)
         while 1:
             # display iteration times
-            print(times)
+            print('times:',times)
             print(len(N))
             # 3 calculate delta_f_k, N_k
+            print('BRANCH 0')
             delta_f_k = cf(f=delta_f, x=x_k, num=num)
             N_k = cf(num=num, f=N, x=x_k)
             # 4 calculate P_k
@@ -75,11 +76,11 @@ class GPM(object):
             if decision(s_k):
                 print('BRANCH 1')
                 lambda_k = np.matmul(delta_f_k,np.transpose(m2))[0].tolist()
-                print(lambda_k)
+                # print(lambda_k)
                 # print(lambda_k)
                 (lambda_min, index) = find_minimum(lambda_k)
-                print('***************')
-                print(lambda_min, index)
+                # print('***************')
+                # print(lambda_min, index)
                 # 8
                 # print(lambda_min)
                 if lambda_min >= 0:
@@ -114,7 +115,7 @@ class GPM(object):
                 x_k = x_k[0].tolist()
             times = times + 1
             f_k = cf(f=f, num=num,x=x_k)
-            print(f_k)
+            print('f(x):', f_k[0][0])
             # print(x_k)
             # print(f_k)
             # g_k =cf(f=g, num=num, x=x_k)
