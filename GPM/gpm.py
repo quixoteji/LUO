@@ -74,17 +74,15 @@ class GPM(object):
                     N = M_operation(self.num).update(N, index)
                     g = M_operation(self.num).update(g, index)  # 11 12
             else:   # 13
-                medium = np.matmul(np.transpose(s_k), delta_f_k)
+                print(s_k.shape, delta_f_k.shape)
+                # medium = np.matmul(np.transpose(s_k), delta_f_k)
+                medium = np.dot(s_k,delta_f_k)
                 # print(f)
                 # f_k = np.asarray(instance_C.calculate(f, x_k), dtype=np.float32)
                 f_k = instance_C.calculate(f, x_k)
-                # print(f_k, type(f_k))
-                # print(gamma, type(gamma))
-
                 # f_k format list[[]]
                 f_k = f_k[0][0]
-                # test1 = gamma*f_k
-                # test2 = test1/medium
+                print(gamma, f_k, medium.shape)
                 alpha_k = -gamma*f_k/medium
                 # g_k = np.asarray(instance_D.calculate(g, x_k), dtype=np.float32)
                 g_k = instance_D.calculate(g, x_k) 
