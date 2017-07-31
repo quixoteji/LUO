@@ -8,8 +8,8 @@ import datetime
 
 print('Prepare')
 print(datetime.datetime.now())
-num = 100
-init_x = [0 for i in range(num)]
+num = 10
+init_x = [1 for i in range(num)]
 gamma = 0.2
 f = generate_f(num)
 h = generate_h(num)

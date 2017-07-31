@@ -139,7 +139,7 @@ class spgm(object):
                 w_k = np.matmul(Oinv_k, g_k)
                 # 34
                 x_k = x_k + alpha_k * s_k \
-                    + np.matmul(np.transpose(N_k), w_k)
+                    - np.matmul(np.transpose(N_k), w_k)
         
                 
 

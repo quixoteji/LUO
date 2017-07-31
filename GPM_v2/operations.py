@@ -132,11 +132,14 @@ def find_minimum(vector):
     index is a list
     '''
     minimum = min(vector)
-    index = np.where(vector == minimum)
-    index = np.ndarray.tolist(index[0])
+    index = vector.index(minimum)
     return (minimum, index)
 
 def update(M, index):
-    for i in index:
-        M.pop(i)
-    return M
+    try:
+        for i in index:
+            M.pop(i)
+        return M
+    except:
+        M.pop(index)
+        return M
