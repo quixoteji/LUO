@@ -8,9 +8,9 @@ import datetime
 
 print('Prepare')
 print(datetime.datetime.now())
-num = 10
+num = 50
 init_x = [1 for i in range(num)]
-gamma = 0.02
+gamma = 0.05
 f = generate_f(num)
 h = generate_h(num)
 b = generate_b(num)

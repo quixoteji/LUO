@@ -1,66 +1,70 @@
 import numpy as np
-from sympy import diff
-from sympy import evalf
 from math import sqrt
 
-'''
-df: Partial differential of the algebra functions
-cf: Caculate the value of the functions
-'''
-
-def df(num, f):
+# ***************************
+# Generate df, N, g
+def df(f):
     '''
-    Partial differential of the algebra functions
+    Partial differential of f
+    f: 3 part[[],[],[]]
     '''
-    # construct the symbols for all variable
-    x_symbols = []
-    for i in range(1, num+1):
-        s = 'x' + str(i)
-        x_symbols.append(s)
+    # df size: variables
+    df = [0 for i in range(len(f[0]))]
+    w = [0 for i in range(len(f[0]))]
+    for i in range(len(df)):
+        ff = f.copy()
+        ff.pop(i)
+        df[i] = ff
+        w[i] = [f[0][i],f[1][i],f[2][i]]
     
-    # construct the Jacobian matrix(zero matrix first) 
-    (r,c) = (len(f),num)
-    df = [[0 for i in range(c)] for j in range(r)]
-    # assign Jacobian matrix
-    r_counter = 0
-    for i in f:
-        for c_counter in range(c):
-            diff_ = diff(i[0], x_symbols[c_counter])
-            df[r_counter][c_counter] = diff_
-        r_counter = r_counter + 1
-    r_counter = 0
-    return df
+    return (df, w)
 
-def cf(num, f, x):
+def cdf(f, x):
     '''
-    Calculate the value of the function
+    Calculate df value
+    '''        
+    
+    
+def N(h):
     '''
-    # make sure dimension of vector x is equal to the num of variables in f
-    if len(x)==num:
-        # reconstruct the size and shape of f
-        (r,c) = (len(f), len(f[0]))
-        # reconstruct all the symbols in f
-        x_symbols = []
-        for i in range(1, num+1):
-            s = 'x' + str(i)
-            x_symbols.append(s)
-        # construct dictionary for symbols and their values
-        subs_duct = {}
-        for i in range(num):
-            subs_duct[x_symbols[i]] = x[i]
-        # reconsturct matrix f with all zeros
-        cf = [[0 for x in range(c)] for j in range(r)]
-        # substitute all values into the matrix
-        for i in range(r):
-            for j in range(c):
-                value = f[i][j].evalf(subs=subs_duct)
-                cf[i][j] = value
-        # return numpy darray
-        cf = np.asarray(cf, dtype=np.float32)
-        return cf
-    else:
-        print("Something wrong with the dimension in calculation")
-        return
+    Partial differential of h
+    f: 3 part[[],[],[]]
+    '''
+    pass    
+
+def g(g):
+    return g
+
+# ***************************
+# calculate f, g, delta_f, N
+def cf(f, x):
+    '''
+    Calculate the value of the f
+    return: 1
+    '''
+    final = 0
+    for i in f:
+        result = np.dot(i,x)
+        final += result
+    return final
+    
+def cg(g, b, x):
+    '''
+    calculate the value of the g
+    return: (1,num)
+    '''
+    # number of constrains
+    # nc = len(cg)
+    final = [0 for i in range(len(g))]
+    for i in range(len(g)):
+        m = 0
+        for j in g[i]:
+            result = np.dot(j, x)
+            m += result
+        final[i] = m - b[i]
+    return final
+
+
 
 def gf(f, b):
     '''
