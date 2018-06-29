@@ -1,0 +1,847 @@
+
+
+
+
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% see http://www.michaelshell.org/
+%% for current contact information.
+%%
+
+%
+%\documentclass[journal]{IEEEtran}
+\documentclass[10pt,journal,cspaper,compsoc]{IEEEtran}
+\pdfminorversion=4
+%
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc.
+
+%\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\bibliographystyle{ieeetr}
+\usepackage{amssymb, amsmath, amsfonts, epsfig, latexsym, times, mathrsfs}
+% Add all your packages here
+\usepackage{times,verbatim,amsfonts}
+\usepackage{url,subfigure,epsfig,graphicx}
+\usepackage{cite}
+\usepackage{amsthm}
+\usepackage[normalem]{ulem}
+\usepackage[T1]{fontenc}
+\usepackage{arydshln}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{bbm}
+\usepackage{cite}
+\usepackage{mathrsfs}
+\usepackage{amsfonts}
+\usepackage{amsmath,bm}
+\usepackage{cite,url,subfigure,epsfig,graphicx}
+\usepackage{amssymb,amsmath}
+\usepackage{indentfirst}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\floatname{algorithm}{Algorithm}
+%\theoremstyle{definition} \newtheorem{definition}{Definition} % make the fonts in theorems, lemmas not italic
+\newtheorem{definition}{\textbf{Definition}}
+\newtheorem{lemma}{\textbf{Lemma}}
+\newtheorem{theorem}{\textbf{Theorem}}
+\newtheorem{example}{\textbf{Example}}
+\newtheorem{proposition}{\textbf{Proposition}}
+\newtheorem{remark}{\textbf{Remark}}
+\newtheorem{corrolary}{\textbf{Corrolary}}
+\newtheorem{ex}{\textbf{EX}}
+%\usepackage[T1]{fontenc} %Palatino
+%\usepackage[sc]{mathpazo}
+
+
+\newcommand{\etal}{\textit{et al.}}
+
+%\newcommand{\etal}{et al}
+\newcommand{\eg}{e.g.}
+\newcommand{\ie}{i.e.}
+
+%\def\BibTeX{{\rmfamily B\kern-.05em{\scshape i\kern-.025em b}\kern-.08em \TeX}}
+
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{Channel State Information Prediction in 5G Wireless Communications: A Deep Learning Approach}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+%
+
+\author{\normalsize{Changqing~Luo, Jinlong~Ji, Qianlong Wang, Lixing Yu, and Pan Li}
+%\thanks{This work was partially supported by the U.S. National Science Foundation under grants CNS-1602172 and CNS-1566479.}
+\thanks{C. Luo, J. Ji, Q. Wang, L. Yu, and P. Li are with Department of Electrical Engineering and Computer Science, Case Western Reserve University, Cleveland, OH 44106. Email: \{cxl881, jxj405, qxw204,lxy257, lipan\}@case.edu.}
+%\thanks{M. Li is with the Department of Computer Science and Engineering, University of Nevada, Reno, Reno, NV 89557. Email: mingli@unr.edu.}
+%\thanks{L. T. Yang is with the Department of Computer Science, St. Francis Xavier University, Antigonish, NS Canada. Email: ltyang@gmail.com.}
+}
+
+
+%\thanks{Manuscript received April 19, 2005; revised January 11, 2007.}
+
+% note the % following the last \IEEEmembership and also \thanks -
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
+%
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+
+
+
+% The paper headers
+\markboth{IEEE Transactions on Big Data}%
+{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls
+for Journals}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+%
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+
+
+
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2007 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+\IEEEcompsoctitleabstractindextext{
+%\renewcommand{\baselinestretch}{1.2}
+\begin{abstract}
+
+Channel state information (CSI) estimation is one of the most fundamental problems in wireless communications, the success of which can boost the performance of wireless communications significantly. Various kinds of technologies have been proposed to address this problem. However, they are usually expensive in throughput used for transmitting pilot signals. This can be even worse in 5G wireless communications. Besides the high throughput cost, employing massive MIMO and millimeter-Wave (mmWave) communications incurs expensive computational cost in conducting CSI estimation. In contrast, we notice that CSI essentially reflects electromagnetic wave propagations which can be affected by many features like location, time, weather，humidity, etc. Therefore, CSI estimation for a specific location should be conducted based on the historical CSI and other features’ data. In this paper, we employ a deep learning technique, i.e., recurrent neural networks (RNN), to predict the CSI values. We conduct extensive experiments to evaluate the performance of the proposed model using the data collected from our own constructed testbeds. The results show that the RNN technique is able to perform accurate CSI estimation in wireless communications.
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+Channel state estimation, 5G wireless communications, deep learning
+\end{IEEEkeywords}
+}
+
+% make the title area
+\maketitle
+
+% \fi
+%
+
+\IEEEdisplaynotcompsoctitleabstractindextext
+\IEEEpeerreviewmaketitle
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction }
+\label{sec:intr}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+Channel state information (CSI) is one of the most fundamental concepts in wireless communications. It refers to known channel properties of a radio communication link. Specifically, CSI can characterize the combined effect of path loss, scattering, diffraction, fading, shadowing, etc., when a signal propagates from a transmitter to its corresponding receiver. As a result, this information can tell us whether a radio communication link is in a good or bad state. 
+
+Obtaining accurate CSI is of paramount importance in guaranteeing the performance of radio communication links in wireless communication systems. The deployment of physical layer parameters mainly depends on the this information in wireless communications. For example, when a channel is in a bad condition, low-order modulation schemes need to be employed to combat the poor channel and reduce bit error rate, while once a channel is in a good state, high-order modulation schemes need to be deployed for obtaining high data transmission rate. If CSI is not accurate, a wrong modulation scheme will be employed, which incurs high data error rate or low data transmission rate. Moreover, it is also known that the control of radio resources \cite{} and interference management \cite{} in wireless communications are highly related to CSI. Thus, to guarantee the performance of radio communication links, we need to find accurate knowledge about CSI of a channel for wireless communications.
+
+To find accurate CSI, researchers have proposed many methods for CSI acquisition that is composed of pilot design \cite{QYWN14} and channel estimation. For the former, to obtain CSI at a radio receiver, the receiver needs to first send some signals to its transmitter and receive the feedback. Some previous studies \cite{} consider to send pilot signals to its transmitter and receive the feedback. This, however, results in high CSI acquisition delay. To address this problem, some works exploit piggybacking technologies to obtain feedback from packets sent from the transmitter \cite{}. These methods introduce large amount of overhead in wireless communication systems since they require each packet to carry the side information. For the latter, channel estimation is conducted to obtain CSI after obtaining the feedback. So far, many methods have been developed to conduct channel estimation, such as maximum likelihood (ML) estimation \cite{}, least-square (LS) estimation \cite{}, minimum mean square error (MMSE) estimation \cite{}. For example, Du \emph{et al.} \cite{DSCB11} consider to perform ML based channel estimation for macro-cellular OFDM uplinks in time-varying channels. The channel state is determined by estimating the unknown channel parameters. Karami \cite{Kar07} considers to employ an LS algorithm to perform MIMO channel estimation, and shows the tracking performance. Ma \emph{et al.} \cite{MZLZ17} propose a linear MMSE method to estimate CSI of individual channels, and especially the initialization point for the iterative linear MMSE is obtained by using an LS channel estimator. We notice that by employing these algorithms, we need to perform matrix operations like matrix multiplication, matrix inverse, eigenvalue decomposition, and singular value decomposition. Performing such matrix operations requires high computational complexity. To sum up, we notice that such works for signal design and channel estimation usually have large amount of overhead and high computational complexity, which makes them only suitable for small-scale wireless communication systems.
+
+On the other hand, current cellular communication systems are now evolving into the next-generation (5G) wireless communication systems. Past few yeas have witnessed the exploding growth in mobile devices. To serve the massive amount of mobile devices, 5G wirelss communication systems will be large-scale. Moreover, we observe the exponential increase in mobile data traffic in wireless communication systems due to various emerging mobile applications like mobile health\cite{IRHI17}, smart cities \cite{KAF17}, and internet of things (IoT) \cite{MTC17} are emerging. According to Ericsson mobility report 2017 \cite{Ericsson17}, worldwide total mobile data traffic was already up to 8.8 ExaBytes in 2016 and this figure grew by 70\% in 2017. To accomodate so massive amount of traffic data in future 5G wireless communication systems, massive multiple-input multiple-output (MIMO) and millimeter-Wave (mmWave) communication have been considered as two of ideal candidate techniques. Massive MIMO exploits spatial domain resources for offering diversity gain, multiplexing gain, and power gain \cite{} and mmWave communication enables 5G wireless communication systems to utilize the spectrum ranging from 3 GHz to 300 GHz \cite{GDMW15}.
+
+Due to the large size and the newly-developed technologies, conventional CSI acquisition methods are faced with a number of challenges when they are used in 5G wireless communication systems. First, the overhead incurred by transmitting pilot signals is very high. The reasons are fold. One is due to serving the great number of mobile devices. Each mobile device needs to obtain pilot signals before performing CSI estimation. The other is due to employing massive MIMO antennas. The amount of CSI feedback needs to be scaled with the number of antennas to control the quantization error. This hence incurs more overhead to be transmitted over 5G wireless communication systems. Second, the computing time used for conducting CSI estimation is very long. 5G wireless communication systems have much more channels than current cellular communication systems, which makes the channel estimation problem much more complicated. When Conventional CSI estimation methods are used to perform CSI estimation, they require performing large-scale matrix operations with high computational complexity, which incurs the formidable challenging for the mobile device with very limited computational resources. Such mobile devices need to spend a very long time to obain the estimated CSI. This is impractical for 5G wireless communication systems because CSI must be refreshed at a rate depending on the correlation time of the channel.
+Therefore, we need to find a very efficient way to perform CSI estimation in 5G wireless communications.
+
+
+% Moreover, to provide high transmission data rate, millimeter-Wave (mmWave) communication enables 5G wireless communication systems to utilize the spectrum ranging from 3 GHz to 300 GHz \cite{GDMW15}. Thus,  
+
+%As the size of channel matrices increases, matrix operations like multiplication, inversion, eigenvalue decomposition, and singular value decomposition are involved in the channel estimation. These operations make channel estimation in 5G wireless communications very computationally-expensive. .
+
+
+
+
+
+
+%The conventional orthogonal training strategy requires that the number of orthogonal training sequences and the length of the training sequences should be at least the number of transmit antenas. When the number of users grows dramatically, no sufficient orthogonal training sequences is to separate the uplink channel estimation from different users. If the same training sequences are reused or non-orthogonal training sequences are adopted, then the inter-user interference will arise during the channel estimation stage. 
+
+%The required number of training for downlink will be comparable to the large number of antennas at base station (Bs), and thus BS may not have sufficient number of orthogonal training sequences to separate the DL channels. 
+
+
+
+
+
+
+In this paper, we propose an online
+
+%Deep learning and artificial neural networks (ANNs) have numerous applications. In particular, it has been successfully applied in localization based CSI, channel equalization and channel decoding in communication systems. With the improving computational resources on devices and the availability of data in large quantity, we expect deep learning to find more applications in communication systems.
+
+%ANNs have been demonstrated for channel equalization with online training, which is to adjust the parameters according to the online pilot data.
+
+
+
+
+
+
+
+
+%The wireless channel is highly complex. In general, it is both frequency- and time- selective, and with multiple antennas, also the space selectivity plays a role. Physical models such as Jakes' model usually simplify this to a multipath progagation model where each path is parameterized by an angle at the receiver array. For channel estimation, however, there is a trade-off: a sophisticated model with more parameters may turn out to be less accurate when the parameters have to be estimated with a finite set of observations.
+
+
+%In this paper, we propose to dynamically control transmission power for improving NLOS transmission performance in large-scale 5G wireless communications.
+
+We summarize our major contributions as follows:
+\begin{enumerate}
+	
+	\item We introduce a three-layer architecture for large-scale 5G wireless communications.
+	
+	\item We propose to dynamically control transmission power for improving NLOS transmission performance in large-scale 5G wireless communications.
+	
+	\item We explore UE association with MBSs/SBSs and radio resources allocation, and formulate the maximization problem of UEs' sum-rate under the constraints of radio resources and UEs' QoS requirements.
+	
+	\item To efficiently solving the formulated problem, we propose a deep Q-network method. In particular, we apply a convolutional neural network (CNN) to perform the Q-function estimation offline, and based on the estimation results, conduct the deep Q-learning online to find the control strategy (i.e. UE association with MBS/SBSs and radio resources allocation). Due to estimating the Q-function offline, the online control is very efficient.
+	
+	\item We conduct extensive simulations to validate the efficacy of the proposed scheme and simulation results show that our proposed scheme can improve the performance significantly.
+	
+\end{enumerate}
+
+The rest of this paper is organized as follows. We first briefly introduce the preliminary knowledge about the radio signal propagation in Section \ref{sec:prelim}. Then, we describe the proposed CSI prediction scheme in detail, including the learning framework, the dataset construction, and the proposed learning method in Section \ref{sec:csi-prediction}. Afterwards, we present the experiments results thoroughly in Section \ref{sec:exp-res}. Subsequently, we present the most related works in Section \ref{sec:related-work}, and finally conclude this paper in Section \ref{sec:concl}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Prelimenaries}\label{sec:prelim}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In this section, we briefly introduce radio signal propagation. In 5G wireless comnunication systems, radio signals are transmitted over transmission media, i.e., air. A typical radio signal propagation system is shown in Fig. \ref{}. In this figure, we can observe that a transmitter transmits a signal $x$ over air to a receiver who receives a signal $y$. Specifically, the signal is transmitted through an antenna which converts the radio signal into an electromagnetic wave that is propagated over free space. The signal transmission can be expressed as follows:
+\begin{equation}
+y = \sqrt{P_{t}h}x + n,
+\end{equation}
+where $P_{t}$ is the transmisstion power at the transmitter, $h$ is the channel gain (i.e., CSI), and $n$ is the noise received by the receiver.
+
+In practice, electromagnetic wave propagates over the air without any protection, a radio signal is prone to suffering from the attennuation of transmission power. The CSI is used to represent the attenuation of a radio signal over the air, i.e., the combined effect of the path loss, scattering, fading, etc. It is well-known that radio channels suffer from path loss unaviodably due to the dissipation of the power radiated by the transmitter. In free space, there is no obstacles between a transmitter and a receiver and thus a transmitter can perform line-of-sight (LOS) signal transmissions to transmit radio signals to a receiver that is $d$ meters away. Based on \cite{Par94}, we can have an approximation expression on the path loss as follows:
+\begin{eqnarray}
+Pl = 10 \log_{10}\frac{P_{t}}{P_{r}} = -10\log_{10}\frac{G_{l}\lambda^{2}}{(4\pi d)^{2}},
+\end{eqnarray}
+where $Pl$ is the path loss in decibel (dB), $P_{r}$ is the receiving power, $G_{l}$ is the product of the transmit and receive antenna field radiation patterns of LOS transmissions, and $\lambda$ is the operating wavelength that can be calculated by $\lambda = 3\times 10^{8}/f$ (here, $f$ is the frequency). Hence, we can see that the path loss depends on the distance between a transmitter and its receiver for transmitting a radio signal over a specific channel through a specific antenna.
+
+Moreover, scattering and fading also have impact on the CSI. Scattering is natural in wireless communications due to the radiation of electromagnetic wave transmission in the medium and the obstacles. When the density of the air and humidity are different, the impact of the scattering on the CSI is also different. On the other hand, the fading of a wireless communication link may either be because of multi-path propagation, weather like rain, or shadowing from obstacles. Due to the changing rate of the magnitude and phase electromagnetic waves, we can usually have slow fading and fast fading. Besides, the fading is also related to the frequency band. Signals transmitted over some frequency bands may suffer from severe performance degradation, which refers to frequency selective fading. Moreover, some frequency bands have some other features. For example, as reported by \cite{MP05}, the atmosphere absorbs the power of electromagenetic waves and the absorption peaks occur at 24 GHz and 60 GHz when radio signals tranvel through the atmosphere and there is stable loss window between two peaks.
+
+To estimate the CSI, we need to send pilot signals and get feedback. Then, based on the knowledge of the transmitted and received signals, we can conduct CSI estimation. Let $\textrm{p}_{1}, \cdots, \textrm{p}_{N}$ denote pilot sequence, and we can have
+\begin{equation}
+\textrm{y}_{i} = \textrm{H}\textrm{p}_{i} + \textrm{n}_{i},
+\end{equation}
+where $\textrm{H}$ is the channel matrix. By combining $N$ received pilot signals, we can have
+\begin{equation}
+\textrm{Y} = \textrm{H}\textrm{P} + \textrm{N}.
+\end{equation}
+$\textrm{H}$ needs to be recovered from the knowledge $\textrm{Y}$ and $\textrm{P}$. To recover $\textrm{H}$, researchers have developed several methods like ML, MMSE, and LS.
+
+
+% On one hand, due to the different radio signal propagation features of different frequency band, the path loss is very different. In particular, 5G wireless communications considers to transmit signals over the spectrum ranging from 3 GHz to 300 GHz. During this large spectrum band, the path loss is totally differnt for different channels. On the other hand, radio signal propagation is prone to suffering from other physical factors, such as obstacles, weather. In the following, we describe all main factors that can affect radio signal propagation. 
+
+
+
+%On the other hand, some additional physical factors also play a very important role in path loss, such as atmosphere, rain and obstacle. For the atmosphere, eletromagenetic waves are absorved by water vapor, molecules of oxygen, and other gaseous atmospheric components. As reported by \cite{MP05}, the atmosphere absorbs the power of electromagenetic waves and the absorption peaks occur at 24 GHz and 60 GHz when radio signals tranvel through the atmosphere and there is stable loss window between two peaks. For the rain, it causes scattering of radio signals, which hence results in the path loss. For the obstacle, it absorbs the signal power and causes scattering when electromagenetic waves penetrate into a large obstacle like a building and a tree.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Online CSI Prediction Scheme for 5G Wireless Communications}
+\label{sec:csi-prediction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In this section, we describe the online CSI prediction framework, the dataset construction, and the proposed deep learning network, respectively.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Online CSI Prediction Framework}
+\label{subsec:learning-frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+From Section \ref{sec:prelim}, we notice that the CSI of a radio communication link is related to path loss, specific frequency band characteristics, weather, atmosphere, and obstacles, etc. One question raises: is it possible for us to employ a certain machine learning technique for analyzing the dataset constructed by all related features and the measured CSI and find the relationship between CSI and all related features? If yes, this can definitely help predict CSI efficiently for a specific frequency band at a place.
+
+Based on the analysis of all the features related to the CSI, we can note that such features have some certain patterns. Specifically, a specific frequency band naturally has particular electromagenetic propagation charateristics that does not change along time and locations, which implies that different frequency bands have different CSI at the same place and at the same time. As a result, frequency bands have some certain patterns in the frequency domain. Moreover, the atmosphere factors like water vapor, molecules of oxygen, and other gaseous atmospheric components are in fact related to the time domain. For example, the measured values of such atmosphere factors in the daytime are different from that during the night. Thus, such atmosphere factors tend to have certain patterns in the time domain. Furthermore, some obstacles like buildings and trees are usually static and they are alway at some specific locations. Some other obstacles are dynamic, such as walking people and cars. For example, a crowd of students walking during the daytime of weekdays in a campus and only a few students there during the evening and weekends. Thus, such dynamic obstacles tend to have some certain patterns as well. As a result, obstacles have some certain patterns in the space domain. In addition, different degrees of rain can have different effect on electromaganetic wave propagations, which is helpful for us to predict CSI in 5G wireless communications. To sum up, these features related to the CSI of a radio communication link have some certain patterns that we can extract. We may take advantage of such extracted patterns to perform CSI estimation for a specific channel at a place during a time in 5G wireless communication systems.
+
+To efficiently find CSI for a mobile device at a place during a time period, we propose an Online CSI prEdiction scheme for 5G wireless communicAtioNs, i.e., called OCEAN. The detailed framework of OCEAN is shown in Fig. \ref{}. Specifically, OCEAN first employs a learning framework for analyzing historic data and extracting patterns from them, i.e., training the model. Then, when a CSI prediction request arrives, OCEAN collects real-time data of all features, and inputs these data into the learning framework to perform online CSI prediction and output the CSI for different frequency bands. In particular, we propose a new learning framework for accurate CSI prediction. This learning framework is the combination of a convolutional neural network (CNN) and long short term memory (LSTM) network (i.e., a variation of recurrent neural networks). This is because of the certain patterns existing in frequency, time, and space domains. In the following two sub-sections, we describe two important parts of our proposed OCEAN, i.e., dataset construction and learning framework.
+
+
+
+%In this study, we propose an Online CSI prEdiction scheme for 5G wireless communicAtioNs, i.e., called as OCEAN. The learning framework is outlined in Fig. \ref{}. Specifically, the 5G wireless communication system finds CSI for all mobile users in this system. However, due to the high computational complexity of estimating CSI, the system cannot obtain real-time CSI and the obtained CSI information always lags behind. Thus, we use such CSI data as the historic data. Moreover, we consider the related features when we learn the historic data and extract patterns. In addition, following the deap learning research, we can learn a time-dependent data by using recurrent neural network (RNN) like long short term memory (LSTM) network. Thus, in OCEAN, we use LSTM network as the basic component of the learning framework and develop a new learning network to accurately predict CSI in 5G wireless communication.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Dataset Construction}
+\label{subsec:dataset-constr}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In our proposed OCEAN, we consider all related features, including frequency band, location, time, temperature, humidity, and weather. In the following, we describe these features used in OCEAN one by one. 
+
+\textit{Frequency band:} 5G wireless communications utilize the spectrum ranging from 3 GHz to 300 GHz. In practical 5G wireless communications, the spectrum is divided into a number of channels, each of which corresponds to a frequency band. Thus, in OCEAN, there are a set of channels that are denoted by $\mathcal{F} = \{f_{1}, f_{2}, \cdots, f_{N}\}$. In practice, at a time, a mobile device experiences different CSI values for different frequency bands.
+
+\textit{Location:} In 5G wireless communication, a base station covers an area. At different locations, mobile devices have different CSI even for the same frequency band. In OCEAN, the coverage area is initially divided into several sub-regions based on the distance to the base station. However, due to the obstacles' influence, mobile users in the same sub-region may have very different CSI values. To solve this problem, we first calculate the mean $mean$ and root-mean-square deviation (RMSD) $RMSD$ for a sub-region. If $RMSD$ is larger than a predefined value $\epsilon$, we consider to separate a sub-region into three: one sub-region contains all mobile devices with the values within $[mean - RMSD, mean + RMSD]$, the second one contains all mobile devices with the values less than $mean - RMSD$, and the third one contains all mobile devices with the values larger than $mean + RMSD$. Following this way, we check all the initial sub-regions. Then, we merge the sub-regions whose RMSD is less than $\epsilon$. Thus, we can finally obtain the number of sub-regions that are denoted by $\mathcal{L} = \{l_1, l_2, \cdots, l_M\}$.
+
+\textit{Time:} In practice, the dense of the atmosphere is different in different season and also in different period during a time. As a result, in OCEAN, we consider the format of the time as "xx:xx:xx, month/day/year". To reduce the amount of similar data, we consider to collect data every 3 $min$.
+
+\textit{Temperatur:} The different temperature can lead to the different dense of the atmosphere, hence affecting the effect of scattering and fading of radio signal propagations. In OCEAN, we consider to collect the real-time temperature data and the temperature is denoted as $\{t_1, t_2, \cdots, t_{P}\}$.
+
+\textit{Humidity:} The humidity also has impact on the effect of scattering and fading. In OCEAN, we consider to collect the real-time humidity data and the humidity is denoted as $\{u_1, u_2, \cdots, u_{H}\}$.
+
+\textit{Weather:} As stated before, the weather has very important impact on the CSI. Particularly, rain can absorb the power of radio signals transmitted over some specific frequency bands. In OCEAN, the set of theweather is $\{$sun, sun with cloud, cloud, light rain, medium rain, heavy rain, light snow, medium snow, heavy snow$\}$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{The Proposed Learning Framework}
+\label{subsec:proposed-network}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Our proposed scheme, online CSI prediction scheme for 5G wireless communications (OCEAN), is an online neural-based end-to-end system to predict CSI value in various of scenarios. The architecture of OCEAN system is structured as Figure X. The whole system is divided into four stages. We construct CSI information maps from raw CSI data and other side information. The standard convoluntional layers in first stage extract frequency representative (FR) vectors from CSI information maps of different frequency bands. The following 1D convolutional neural network compresses FRV of multiple bands into one state representative (SR) vector. In stage 3, the SR vectors pass through the LSTM layers to predict future SR vectors. At the output of the LSTM layers, we reconstruct CSI information maps from the SR vectors. To automatically adjust the system according to practical scenario, we equip our OCEAN system with online learning mechanism, which makes the system more efficient and stable in practical scenario. In this section, first we introduce CSI information maps, the training dataset used for OCEAN system. Then  we describe the details of each stage of our model, like frequency representative vector extraction, state representative vector extraction, state vector prediction and reconstruction of predicted CSI information maps. Finally, we present the online learning mechanism used in OCEAN system.
+
+
+\subsubsection{CSI Information Image}
+
+To use the proposed learning framework, the input data need to be preprocessed before feeding them into the learning framework. This is because the first part, i.e., the CNN network, is originally developed for processing image data. As a result, to make the proposed learning framework work, we need to organize the input data.
+
+%Our OCEAN system is an end-to-end prediction model, which we feed in CSI values of all frequency to the neural-based system, and correspondingly we obtain CSI values of all bands. To fit the requirements of the input, we build CSI information maps as training dataset, which combines all bands CSI information of all bands and the map location information together.
+
+To train color image data by a CNN network, the input data is the pixel that is the smallest addressable element in an image. Each image is composed of pixels that is represented by a series of code. A channel is the grayscale image with the same size as the color image.
+
+Inspired by the representation of color images, we organize the raw data in the similar way. Specifically, the raw data is segmented into small cells, each of which corresponds to a pixel in an image. For each frequency band, the data of the CSI and other features are formed the pixels.
+
+Inspired by the representation of digital color image, we  construct CSI information maps from raw CSI data and other side information. Color digital images are made of pixels, and pixels are made of combinations of primary colors represented by a series of code. A \textbf{pixel} is the smallest addressable element in the image. A \textbf{channel} is the grayscale image of the same size as a color image, made of just one of these primary colors.  Similarly, we segment the map of a certain place into several small cells, which is "CSI pixel". For each frequency band, we collect CSI value and side information in these CSI pixels. The maps, created of CSI value data of same frequency, or same types of side information, are like "CSI information channels". The CSI information maps are the combination of CSI information channels. 
+
+The training dataset is the collection of CSI information maps. At each time slot, we collect required data and build the CSI maps Xi. As time goes by, we obtain a CSI information maps sequence (X1,X2,Xi).
+
+\subsubsection{Frequency Representative Vector Extraction}
+The CSI information maps contains details of raw information of CSI values and other side information data. For classic machine learning system, we should manually extract features from these data, and select suitable features, which will deeply influence future CSI values. However, the feature extraction and selection processes are heavily depends on expertise on CSI. In addition, the manually extraction and selection are effort-consuming tasks. To address these issues, we utilize the advance of neural-based learning system to extract representative vectors from the CSI information maps.
+
+As show in stage 1 of Figure X, the convolutional neural networks (CNNs) extract frequency representative vectors from CSI information maps. (Here, the vectors obtained by CNN are not only frequency representative vectors. In fact, several vectors represent the side environment information, such as *, *.  We ignore the differences between these two types of vectors, and call all of them Frequency Representative Vectors) First, we decompose a CSI information map into multiple CSI information channel
+\begin{eqnarray}
+	\mathbf{\alpha}  = softmax \left( {{\mathbf{w}^T}\tanh({\mathbf{W}_h}\mathbf{H}_a)} \right)\label{eq:9}\\
+\end{eqnarray}
+For normal CNNs, we use a number of convolutional filters to process these channels, but for clarity we will explain the CNN networks with one filter. Let wR be a convolutional filter which we apply to a window of pixels in the channel to generate a feature.  A feature C for a window of pixels (P1,P2) is given as follows:
+\begin{eqnarray}
+	\mathbf{\alpha}  = softmax \left( {{\mathbf{w}^T}\tanh({\mathbf{W}_h}\mathbf{H}_a)} \right)\label{eq:9}\\
+\end{eqnarray}
+where bv is a bias term and X is the activation function.  A feature map C is a collection of features computed from all windows of pixels:
+\begin{eqnarray}
+	\mathbf{\alpha}  = softmax \left( {{\mathbf{w}^T}\tanh({\mathbf{W}_h}\mathbf{H}_a)} \right)\label{eq:9}\\
+\end{eqnarray}
+To capture the most salient features in c, we apply a max-over-time pooling operation (Collobert et al., 2011), yielding a scalar:
+\begin{eqnarray}
+	\mathbf{\alpha}  = softmax \left( {{\mathbf{w}^T}\tanh({\mathbf{W}_h}\mathbf{H}_a)} \right)\label{eq:9}\\
+\end{eqnarray}
+
+In the end of the stage 1, we combine all outputs from convolutional filters together, and flatten them into a vector, which is the extracted Frequency Representative Vector.
+
+\subsubsection{State Representative Vector Extraction}
+After Stage 1, we obtains FR vectors of all frequency bands and side information. Concatenating these FR vectors together, we build a state representative matrix of a certain time slot. We can use the matrix sequence as input to pass it through recurrent neural networks to capture the temporal features of the sequence. However, sequentially concatenating vectors cannot imply the inference among frequency bands and side information. Meanwhile, the size of dimension of inputs determines the number of parameters required to optimize. If the input size is too large, there are a huge size of parameters need to train, which will spend an unacceptable time, and the system may not converge for lacking enough training samples. 
+
+To solve these problems, we use CNNs to compress the state representative matrix into a state representative (SR) vector. The process is similar to FR vectors extraction, but for SR vector extraction, the convolutional computation is only along the one dimension as shown in Figure X1. The output of this CNN is a state representative vector:
+\begin{eqnarray}
+	\mathbf{\alpha}  = softmax \left( {{\mathbf{w}^T}\tanh({\mathbf{W}_h}\mathbf{H}_a)} \right)\label{eq:9}\\
+\end{eqnarray}
+
+\subsubsection{State Vector Prediction}
+
+For OCEAN system, we aims at predicting the future CSI state of the whole space based on previous and current CSI state. From previous stage, We accumulate the captured state representative vectors to form a state vector sequence. Due to the superior performance of recurrent neural networks in different sequence learning tasks, we adopt recurrent neural network to predict future state vector, specifically we choose LSTM-based RNN.
+
+Base on the Equation X, the output of LSTM network layers can be written as:
+\begin{eqnarray}
+	\mathbf{\alpha}  = softmax \left( {{\mathbf{w}^T}\tanh({\mathbf{W}_h}\mathbf{H}_a)} \right)\label{eq:9}\\
+\end{eqnarray}
+
+Then, a softmax layer is followed to transform XX to predicted state vector.
+\begin{eqnarray}
+	\mathbf{\alpha}  = softmax \left( {{\mathbf{w}^T}\tanh({\mathbf{W}_h}\mathbf{H}_a)} \right)\label{eq:9}\\
+\end{eqnarray}
+
+\subsubsection{Reconstruction of Predicted CSI Information Maps}
+The output of previous stage is the predicted state vector. However, the goal of our design is to predict the real multi-spectrum CSI status of a specific space, which is represented by CSI information maps. Only obtaining status vector is far from our objective.
+
+**We segment the state vector into n part. The length of segments should equal to the size of the channel in the CSI information map. **
+
+\subsubsection{Online Learning Mechanism}
+Although we consider plenty of side information, like temperature, humidity, obstacles etc. in our system design, there still are some factors which may lead to abrupt change of CSI status. To address this issue, we equip our system with online learning mechanism, which can capture any inference to CSI status and make the system more stable in real scenario.
+
+**Set Threshold**
+
+
+%\begin{figure}[!t] \vspace{0cm} \hspace{-0.2cm}
+%	\centerline{ \includegraphics[width=3.3in, height = 2.2in]{arch.eps}}
+%	\vspace{0.1cm} \caption{The architecture for large-scale 5G wireless communications.}
+%	\label{fig:com-arch}
+%\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Experiments}
+\label{sec:exp-res}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In this section, we evaluate the performance of the proposed CSI prediction scheme through four typical case studies, i.e., \textbf{Case I:} free space environment, \textbf{Case II:} outdoor environment, \textbf{Case III:} a work room, and \textbf{Case IV:} a building. We believe that considering the CSI prediction in these scenarios is very helpful for validating our proposed CSI prediction scheme. In what follows, we describe the data collection and preprocessing, RNN-CNN network settings, and experiment results, respectively.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Data Preparation}
+\label{subsubsec:case1-data}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We collect the CSI data in the considered four scenarios. To collect the data, we use a Dell laptop equipped with an Intel Wireless Link 5300 network interface card as the mobile device and configure a TP-Link WiFi router as an access point. The mobile device sends successive packets to the WiFi router, and extracts the CSI from the received packets.
+
+For \textbf{Case I:}, we consider a free space environment and collect data in a scenario as shown in Fig. \ref{}. In this scenario, we place the WiFi router at the window on the second floor and the wireless router is xx meters away from the ground. Moreore, we move the laptop around the parking lot and collect CSI data at each point. In addition, there is no obstacles in the parking lot and the information transmission between the wireless router and the laptop is an LOS transmission. Thus, this is approximately a free space environment. 
+
+%\begin{figure}[!t] \vspace{0cm} \hspace{-0.2cm}
+%	\centerline{ \includegraphics[width=3.3in, height = 2.2in]{arch.eps}}
+%	\vspace{0.1cm} \caption{The scenario of Case I: a free space environment.}
+%	\label{fig:case1}
+%\end{figure}
+
+
+For \textbf{Case II:}, we consider an outdoor environment as shown in Fig. \ref{}. We move the laptop around out of a building where there are trees and people walking around on the ground. Moreover, the laptop communicates with a wireless router which is placed at the window on the fourth floor and is high off the ground for xx meters. This is a typical outdoor environment in which wireless communications often occur. 
+
+%\begin{figure}[!t] \vspace{0cm} \hspace{-0.2cm}
+%	\centerline{ \includegraphics[width=3.3in, height = 2.2in]{arch.eps}}
+%	\vspace{0.1cm} \caption{The scenario of Case II: an outdoor environment.}
+%	\label{fig:case2}
+%\end{figure}
+
+For \textbf{Case III:}, we consider a typical indoor environment, i.e., a work room in a building as shown in Fig. \ref{}. This is a laboratory in a building and there are several cubics and desks in this room. As shown in the figure, we place the wireless router on the desk. To collect the CSI data, we move the laptop in this room and stay each collecting point for a while. This indoor environment is also a typical scenario because wireless communications often occur at workplaces as well.
+
+
+%\begin{figure}[!t] \vspace{0cm} \hspace{-0.2cm}
+%	\centerline{ \includegraphics[width=3.3in, height = 2.2in]{arch.eps}}
+%	\vspace{0.1cm} \caption{The scenario of Case III: a work room.}
+%	\label{fig:case3}
+%\end{figure}
+
+For \textbf{Case IV:}, we consider another typical indoor environment, i.e., a building as shown in Fig. \ref{}. In this building, there are 5 floors and we collect the CSI data at one of the floor. Specifically, we place the wireless router on the desk of a room and move the laptop on this floor. To collect the CSI data, we place the laptop in several rooms, and especially the laptop stays at each position for a period. This scenario is similar to that of \textbf{Case III}. The major difference is that we consider the impact of the walls on the CSI in this case.
+
+%\begin{figure}[!t] \vspace{0cm} \hspace{-0.2cm}
+%	\centerline{ \includegraphics[width=3.3in, height = 2.2in]{arch.eps}}
+%	\vspace{0.1cm} \caption{The scenario of Case IV: a building.}
+%	\label{fig:case4}
+%\end{figure}
+
+
+
+
+\textit{Moreover, we collect the weather data from xxx.} 
+
+
+
+%\begin{figure}
+%\centering %\hspace{-3em}
+%{\includegraphics[width=3in]{convergence.eps}}
+%\caption{The convergence of the proposed scheme.}
+%\label{fig:comm}
+%\vspace*{-.1in}
+%\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{RNN-CNN Network Settings}
+\label{subsubsec:case1-rnncnn}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\textit{In our experiments, we build our RNN-CNN network with multi-dimensioanl input data. The output of the RNN network has 4 neurons. The activation function is set by default to the sigmoid function and make a single value prediction. The ``look back window'' of the systme is set to 1 and 5, which is the number of most recent data that we consider as input to predict the next time slot variables.}
+
+Moreover, we also set up a CNN used for estimating the Q-function. There are three convolutional layers, two pooling layer, and two fully connected layers. The values of the initial weight vector are set as random values. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Experiment Results and Discussions}
+\label{subsec:case1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+To measure the performance of the proposed CSI prediction scheme, we adopt the mean sqared derivation (MSD) to assess the derivation between the prediction values and the measured ones. To compare the better performance of our proposed CSI prediction scheme, we conduct the experiments by only using the CNN network to predict the CSI. In the following, we show the performance of our proposed CSI prediction scheme in the considered four case studies.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Case Study I: A Free Space Environment}
+\label{subsubsec:case1}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Fig. \ref{} shows the prediction results along the time. Specifically, we compare the training and testing results with the real CSI values collected in this case study. From this figure, we can find that the training and testing results are very close to the real CSI values. This implies that our proposed scheme can work well in predicting CSI data.
+
+%\begin{figure}[!t] \vspace{0cm} \hspace{-0.2cm}
+%	\centerline{ \includegraphics[width=3.3in, height = 2.2in]{arch.eps}}
+%	\vspace{0.1cm} \caption{Results comparison between the proposed scheme and the one by using the CNN network.}
+%	\label{fig:case1-dev}
+%\end{figure}
+
+Fig. \ref{} illustrates the prediction precision of our proposed scheme and compares the performance with other two schemes. Specifically, the MSD values of our proposed scheme, LSTM, and MLP are xx, xx, and xx, respectively. The proposed scheme has the lowest MSD value. Moreover, the LSTM scheme is better than the MLP scheme. Therefore, both observations give us a sight that we need to design a sequence-related scheme to conduct CSI prediction.
+
+%\begin{figure}[!t] \vspace{0cm} \hspace{-0.2cm}
+%	\centerline{ \includegraphics[width=3.3in, height = 2.2in]{arch.eps}}
+%	\vspace{0.1cm} \caption{Results comparison between the proposed scheme and the one by using the CNN network.}
+%	\label{fig:case1-dev}
+%\end{figure}
+
+Fig. \ref{} also demonstrates the performance of the proposed scheme. Specifically, we compare the prediction results with that calculated by using Eq. (\ref{}). From this figure, we can see that the curve of the obtained prediction results is close to that of the calculated results. This also validates the efficacy of our proposed scheme. Moreover,  Specifically, the MSD values of our proposed scheme, LSTM, and MLP are xx, xx, and xx, respectively. The proposed scheme has the lowest MSD value. Moreover, the LSTM scheme is better than the MLP scheme. Therefore, both observations give us a sight that we need to design a sequence-related scheme to conduct CSI prediction.
+
+%\begin{figure}
+%\centering %\hspace{-3em}
+%{\includegraphics[width=3in]{comparison.eps}}
+%\caption{The comparison of the sum-rate achieved by all UEs.}
+%\label{fig:comp}
+%\vspace*{-.1in}
+%\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Case Study II: Outdoor Environment with Obstructions}
+\label{subsubsec:case2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+Fig. \ref{} shows the prediction results along the time. Specifically, we compare the training and testing results with the real CSI values collected in this case study. From this figure, we can find that the training and testing results are very close to the real CSI values. This implies that our proposed scheme can work well in predicting CSI data.
+
+%\begin{figure}[!t] \vspace{0cm} \hspace{-0.2cm}
+%	\centerline{ \includegraphics[width=3.3in, height = 2.2in]{arch.eps}}
+%	\vspace{0.1cm} \caption{Results comparison between the proposed scheme and the one by using the CNN network.}
+%	\label{fig:case1-dev}
+%\end{figure}
+
+Fig. \ref{} illustrates the prediction precision of our proposed scheme and compares the performance with other two schemes. Specifically, the MSD values of our proposed scheme, LSTM, and MLP are xx, xx, and xx, respectively. The proposed scheme has the lowest MSD value. Moreover, the LSTM scheme is better than the MLP scheme. Therefore, both observations give us a sight that we need to design a sequence-related scheme to conduct CSI prediction.
+
+%\begin{figure}[!t] \vspace{0cm} \hspace{-0.2cm}
+%	\centerline{ \includegraphics[width=3.3in, height = 2.2in]{arch.eps}}
+%	\vspace{0.1cm} \caption{Results comparison between the proposed scheme and the one by using the CNN network.}
+%	\label{fig:case1-dev}
+%\end{figure}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Case Study III: A room of An Indoor Environment}
+\label{subsec:case3}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Fig. \ref{} shows the prediction results along the time. Specifically, we compare the training and testing results with the real CSI values collected in this case study. From this figure, we can find that the training and testing results are very close to the real CSI values. This implies that our proposed scheme can work well in predicting CSI data.
+
+%\begin{figure}[!t] \vspace{0cm} \hspace{-0.2cm}
+%	\centerline{ \includegraphics[width=3.3in, height = 2.2in]{arch.eps}}
+%	\vspace{0.1cm} \caption{Results comparison between the proposed scheme and the one by using the CNN network.}
+%	\label{fig:case1-dev}
+%\end{figure}
+
+Fig. \ref{} illustrates the prediction precision of our proposed scheme and compares the performance with other two schemes. Specifically, the MSD values of our proposed scheme, LSTM, and MLP are xx, xx, and xx, respectively. The proposed scheme has the lowest MSD value. Moreover, the LSTM scheme is better than the MLP scheme. Therefore, both observations give us a sight that we need to design a sequence-related scheme to conduct CSI prediction.
+
+%\begin{figure}[!t] \vspace{0cm} \hspace{-0.2cm}
+%	\centerline{ \includegraphics[width=3.3in, height = 2.2in]{arch.eps}}
+%	\vspace{0.1cm} \caption{Results comparison between the proposed scheme and the one by using the CNN network.}
+%	\label{fig:case1-dev}
+%\end{figure}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Case Study IV: A building of An Indoor Environment}
+\label{subsec:case4}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Fig. \ref{} shows the prediction results along the time. Specifically, we compare the training and testing results with the real CSI values collected in this case study. From this figure, we can find that the training and testing results are very close to the real CSI values. This implies that our proposed scheme can work well in predicting CSI data.
+
+%\begin{figure}[!t] \vspace{0cm} \hspace{-0.2cm}
+%	\centerline{ \includegraphics[width=3.3in, height = 2.2in]{arch.eps}}
+%	\vspace{0.1cm} \caption{Results comparison between the proposed scheme and the one by using the CNN network.}
+%	\label{fig:case1-dev}
+%\end{figure}
+
+
+Fig. \ref{} illustrates the prediction precision of our proposed scheme and compares the performance with other two schemes. Specifically, the MSD values of our proposed scheme, LSTM, and MLP are xx, xx, and xx, respectively. The proposed scheme has the lowest MSD value. Moreover, the LSTM scheme is better than the MLP scheme. Therefore, both observations give us a sight that we need to design a sequence-related scheme to conduct CSI prediction.
+
+%\begin{figure}[!t] \vspace{0cm} \hspace{-0.2cm}
+%	\centerline{ \includegraphics[width=3.3in, height = 2.2in]{arch.eps}}
+%	\vspace{0.1cm} \caption{Results comparison between the proposed scheme and the one by using the CNN network.}
+%	\label{fig:case1-dev}
+%\end{figure}
+
+To sum up, the above experiment results have clearly shown the effectiveness of our proposed online CSI prediction scheme. In particular, we can see that our proposed scheme is able to achieve very low MSD values. Moreover, comparing with other two schemes, our proposed scheme has better performance and especially the one without considering the temperol dimension has the poorest performance, which gives us a sight that the CSI prediction doesnot only depend on the spatial but also the temporal.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Related Works}
+\label{sec:related-work}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+So far, previous studies have examined how to apply machine learning techniques into 5G wireless communications and networks. Specifically, these works have studies some important issues in 5G wireless communications and networks by exploring machine learning methods, such as some mobile traffic prediction, wireless network optimizations, and user behaviours. We summarize them in the following.
+
+Researchers have investigated the mobile traffic forcasting problem in wireless networks. Wang \emph{et al.} \cite{WTXW17} modeled spatialtemporal mobile traffic data based on the existing dataset and proposed to employ deep learning approaches for the traffic prediction. Sciancalepore \emph{et al.} \cite{SSCB17} considered network slicing traffic forecasting and developed a Holt-Winters theory based forecasting solution to predict future traffic levels per network slice. Han \emph{et al.} \cite{HJQC09} also analyzed the mobile traffic load for a customer and predicted busy hour for each month by exploiting the support vector machine (SVM) technique.
+
+Another research line is to optimize wireless network design by employing machine learning techniques. Kato \emph{et al.} \cite{KFMT17} characterized mobile traffic in wireless heterogeneous networks and proposed a deep learning based method to control mobile traffic flowing among multiple wireless access networks. Xu \emph{et al.} \cite{XWTW17} considered the problem of radio resource allocation in cloud radio access networks for 5G wireless communications and developed a radio resource allocation strategy based on a deep reinforcement learning that is used to approximate the action-value function. He \emph{et al.} \cite{HLYZ17,HZYZ17} proposed to utilize a deep reinforcement learning technique for jointly optimizing both caching and interference alignment in 5G wireless communications. Liu \emph{et al.} \cite{LCCZ17} considered to identify the link usage in the flow constrained optimization problem in 5G wireless networks by using the deep learning method, in order to reduce the scale of the considered optimization problem.
+
+Some other previous works considered to study some other important issues n 5G wireless networks by using machine learning techniques, such as user behaviors and quality of experience (QoE). Parwez \emph{et al.} \cite{PRG17} utilized wireless network data, i.e., call detail record, to identify anomalous behavior of a wireless network. Lin \emph{et al.} \cite{LOJE17} applied a machine learning method to predict users' QoE by considering users' features like user numbers and CSI experienced by a user.
+
+From the above analysis, we can notice that machine learning techniques are now considered as one of promising tools in designing 5G wireless networks and improving the wireless network performance. However, few of them apply such techniques into predicting the CSI of radio signal propagation in wireless networks.
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+\label{sec:concl}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+In this paper, we have studied the problem of enhancing NLOS transmission performance in large-scale 5G wireless communications. To improve NLOS transmission performance, we propose to dynamically control transmission power. In particular, we explore the control of UE association with MBSs/SBSs and radio resources allocation, and formulate the maximization problem of UEs' sum-rate under the constraints of radio resources and UEs' QoS requirements. 
+
+
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex,
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation Results}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command, the
+% \label for the overall figure must come after \caption.
+% \hfil must be used as a separator to get equal spacing.
+% The subfigure.sty package works much the same way, except \subfigure is
+% used instead of \subfloat.
+%
+%\begin{figure*}[!t]
+%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
+%\label{fig_second_case}}}
+%\caption{Simulation results}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals use top floats exclusively.
+% Note that, LaTeX2e, unlike IEEE journals, places footnotes above bottom
+% floats. This can be corrected via the \fnbelowfloat command of the
+% stfloats package.
+
+
+
+%\section{Conclusion}
+%The conclusion goes here.
+
+
+
+
+
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+
+%\appendices
+%\section{Proof of the First Zonklar Equation}
+%Appendix one text goes here.
+
+% you can choose not to have a title for an appendix
+% if you want by leaving the argument blank
+%\section{}
+%Appendix two text goes here.
+
+
+% use section* for acknowledgement
+%\section*{Acknowledgment}
+
+
+%The authors would like to thank...
+
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+
+\bibliographystyle{IEEETran}
+%\bibliography{./ref1,./Ref_R,./refming}
+\bibliography{IEEEabrv,Ref_C}
+%\setlength{\baselineskip}{12pt}
+%\bibliography{./Ref_C}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+
+% biography section
+%
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+
+
+% or if you just want to reserve a space for a photo:
+
+%\begin{IEEEbiography}{Pengbo Si}
+%Biography text here.
+%\end{IEEEbiography}
+
+% if you will not have a photo at all:
+%\begin{IEEEbiography}{F. Richard Yu}
+%Biography text here.
+%\end{IEEEbiography}
+
+% insert where needed to balance the two columns on the last page with
+% biographies
+%\newpage
+
+%\begin{IEEEbiographynophoto}{F. Richard Yu}
+%Biography text here.
+%\end{IEEEbiographynophoto}
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
+
+
+% that's all folks
+\end{document}

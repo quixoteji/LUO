@@ -1,0 +1,78 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: CSI-5G-v2.aux
+The style file: ieeetr.bst
+Illegal, another \bibstyle command---line 74 of file CSI-5G-v2.aux
+ : \bibstyle
+ :          {IEEETran}
+I'm skipping whatever remains of this command
+I couldn't open database file Ref_C.bib
+---line 75 of file CSI-5G-v2.aux
+ : \bibdata{IEEEabrv,Ref_C
+ :                        }
+I'm skipping whatever remains of this command
+Database file #1: IEEEabrv.bib
+Warning--I didn't find a database entry for ""
+Warning--I didn't find a database entry for "QYWN14"
+Warning--I didn't find a database entry for "DSCB11"
+Warning--I didn't find a database entry for "Kar07"
+Warning--I didn't find a database entry for "MZLZ17"
+Warning--I didn't find a database entry for "IRHI17"
+Warning--I didn't find a database entry for "KAF17"
+Warning--I didn't find a database entry for "MTC17"
+Warning--I didn't find a database entry for "Ericsson17"
+Warning--I didn't find a database entry for "GDMW15"
+Warning--I didn't find a database entry for "Par94"
+Warning--I didn't find a database entry for "MP05"
+Warning--I didn't find a database entry for "WTXW17"
+Warning--I didn't find a database entry for "SSCB17"
+Warning--I didn't find a database entry for "HJQC09"
+Warning--I didn't find a database entry for "KFMT17"
+Warning--I didn't find a database entry for "XWTW17"
+Warning--I didn't find a database entry for "HLYZ17"
+Warning--I didn't find a database entry for "HZYZ17"
+Warning--I didn't find a database entry for "LCCZ17"
+Warning--I didn't find a database entry for "PRG17"
+Warning--I didn't find a database entry for "LOJE17"
+You've used 0 entries,
+            1876 wiz_defined-function locations,
+            1042 strings with 14038 characters,
+and the built_in function-call counts, 20 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 2
+:= -- 9
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 3
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 2
+(There were 2 error messages)

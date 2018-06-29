@@ -1,0 +1,754 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.5.22)  13 OCT 2017 22:43
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**CSI-5G-v2.tex
+(./CSI-5G-v2.tex
+LaTeX2e <2016/03/31>
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen102
+\@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpdimenC=\dimen104
+\@IEEEtrantmpcountA=\count79
+\@IEEEtrantmpcountB=\count80
+\@IEEEtrantmpcountC=\count81
+\@IEEEtrantmptoksA=\toks14
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 503.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1ppl.fd
+File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+)
+-- Using IEEE Computer Society mode.
+-- Using 7.875in x 10.75in (ieeecs) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen105
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen106
+\CLASSINFOnormalsizeunitybaselineskip=\dimen107
+\IEEEnormaljot=\dimen108
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <5.01874> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <5.01874> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <7.02625> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <7.02625> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <8.03> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <8.03> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <9.03374> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <9.03374> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <9.53561> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <9.53561> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <11.04124> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <11.04124> not available
+
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12.045> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <12.045> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <17.06374> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <17.06374> not available
+
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <20.075> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <20.075> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <24.09> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <24.09> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+\IEEEquantizedlength=\dimen109
+\IEEEquantizedlengthdiff=\dimen110
+\IEEEquantizedtextheightdiff=\dimen111
+\IEEEilabelindentA=\dimen112
+\IEEEilabelindentB=\dimen113
+\IEEEilabelindent=\dimen114
+\IEEEelabelindent=\dimen115
+\IEEEdlabelindent=\dimen116
+\IEEElabelindent=\dimen117
+\IEEEiednormlabelsep=\dimen118
+\IEEEiedmathlabelsep=\dimen119
+\IEEEiedtopsep=\skip41
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@IEEEsubequation=\count86
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count87
+\c@table=\count88
+\@IEEEeqnnumcols=\count89
+\@IEEEeqncolcnt=\count90
+\@IEEEsubeqnnumrollback=\count91
+\@IEEEquantizeheightA=\dimen120
+\@IEEEquantizeheightB=\dimen121
+\@IEEEquantizeheightC=\dimen122
+\@IEEEquantizeprevdepth=\dimen123
+\@IEEEquantizemultiple=\count92
+\@IEEEquantizeboxA=\box26
+\@IEEEtmpitemindent=\dimen124
+\IEEEPARstartletwidth=\dimen125
+\c@IEEEbiography=\count93
+\@IEEEtranrubishbin=\box27
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\@emptytoks=\toks15
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/03/10 v2.15b AMS math features
+\@mathmargin=\skip44
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks16
+\ex@=\dimen126
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen127
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count94
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count95
+\leftroot@=\count96
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count97
+\DOTSCASE@=\count98
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen128
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+\macc@depth=\count99
+\c@MaxMatrixCols=\count100
+\dotsspace@=\muskip10
+\c@parentequation=\count101
+\dspbrk@lvl=\count102
+\tag@help=\toks17
+\row@=\count103
+\column@=\count104
+\maxfields@=\count105
+\andhelp@=\toks18
+\eqnshift@=\dimen129
+\alignsep@=\dimen130
+\tagshift@=\dimen131
+\tagwidth@=\dimen132
+\totwidth@=\dimen133
+\lineht@=\dimen134
+\@envbody=\toks19
+\multlinegap=\skip45
+\multlinetaggap=\skip46
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/05/09 v1.0r Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 96.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count106
+))
+\Gin@req@height=\dimen135
+\Gin@req@width=\dimen136
+)
+\epsfxsize=\dimen137
+\epsfysize=\dimen138
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/latexsym.sty
+Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
+\symlasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
+(Font)                  U/lasy/m/n --> U/lasy/b/n on input line 52.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/times.sty
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup7
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks22
+\verbatim@line=\toks23
+\verbatim@in@stream=\read1
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip47
+\subfigcapskip=\skip48
+\subfigcaptopadj=\dimen139
+\subfigbottomskip=\skip49
+\subfigcapmargin=\dimen140
+\subfiglabelskip=\skip50
+\c@subfigure=\count107
+\c@lofdepth=\count108
+\c@subtable=\count109
+\c@lotdepth=\count110
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2016/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip51
+\subfig@bottom=\skip52
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 332.
+Package: cite 2015/02/27  v 5.5
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks24
+\thm@bodyfont=\toks25
+\thm@headfont=\toks26
+\thm@notefont=\toks27
+\thm@headpunct=\toks28
+\thm@preskip=\skip53
+\thm@postskip=\skip54
+\thm@headsep=\skip55
+\dth@everypar=\toks29
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/ulem/ulem.sty
+\UL@box=\box30
+\UL@hyphenbox=\box31
+\UL@skip=\skip56
+\UL@hook=\toks30
+\UL@height=\dimen141
+\UL@pe=\count111
+\UL@pixel=\dimen142
+\ULC@box=\box32
+Package: ulem 2012/05/18
+\ULdepth=\dimen143
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+)
+LaTeX Font Info:    Try loading font information for T1+ppl on input line 105.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/t1ppl.fd
+File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/arydshln/arydshln.sty
+Package: arydshln 2016/04/28 v1.73 
+\dashlinedash=\dimen144
+\dashlinegap=\dimen145
+\adl@box=\box33
+\adl@height=\dimen146
+\adl@heightsave=\dimen147
+\adl@depth=\dimen148
+\adl@depthsave=\dimen149
+\adl@finaldepth=\dimen150
+\adl@columns=\count112
+\adl@ncol=\count113
+\adl@currentcolumn=\count114
+\adl@currentcolumnsave=\count115
+\adl@totalheight=\count116
+\adl@totalheightsave=\count117
+\adl@dash=\count118
+\adl@gap=\count119
+\adl@cla=\count120
+\adl@clb=\count121
+\adl@everyvbox=\toks31
+\adl@LTpagetotal=\dimen151
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/algorithms/algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\c@ALC@unique=\count122
+\c@ALC@line=\count123
+\c@ALC@rem=\count124
+\c@ALC@depth=\count125
+\ALC@tlm=\skip57
+\algorithmicindent=\skip58
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/algorithms/algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count126
+\float@exts=\toks32
+\float@box=\box34
+\@float@everytoks=\toks33
+\@floatcapt=\box35
+)
+\@float@every@algorithm=\toks34
+\c@algorithm=\count127
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/bbm-macros/bbm.sty
+Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
+LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
+(Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
+(Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2016/02/27 v1.2a Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup8
+\symboldletters=\mathgroup9
+\symboldsymbols=\mathgroup10
+\symboldlasy=\mathgroup11
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 142.
+LaTeX Info: Redefining \bm on input line 208.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+\c@definition=\count128
+\c@lemma=\count129
+\c@theorem=\count130
+\c@example=\count131
+\c@proposition=\count132
+\c@remark=\count133
+\c@corrolary=\count134
+\c@ex=\count135
+
+(./CSI-5G-v2.aux
+
+LaTeX Warning: Label `eq:9' multiply defined.
+
+
+LaTeX Warning: Label `eq:9' multiply defined.
+
+
+LaTeX Warning: Label `eq:9' multiply defined.
+
+
+LaTeX Warning: Label `eq:9' multiply defined.
+
+
+LaTeX Warning: Label `eq:9' multiply defined.
+
+
+LaTeX Warning: Label `eq:9' multiply defined.
+
+)
+\openout1 = `CSI-5G-v2.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 103.
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/t1ptm.fd
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+)
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <5.01874> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 103.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <5.01874> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 103.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <7.02625> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 103.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <7.02625> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 103.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <8.03> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 103.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <8.03> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 103.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9.03374> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 103.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <9.03374> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 103.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9.53561> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 103.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <9.53561> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 103.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <11.04124> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 103.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <11.04124> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 103.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12.045> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 103.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12.045> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 103.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.06374> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 103.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <17.06374> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 103.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.075> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 103.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <20.075> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 103.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.09> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 103.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <24.09> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 103.
+
+-- Lines per column: 61 (exact).
+(/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count136
+\scratchdimen=\dimen152
+\scratchbox=\box36
+\nofMPsegments=\count137
+\nofMParguments=\count138
+\everyMPshowfont=\toks35
+\MPscratchCnt=\count139
+\MPscratchDim=\dimen153
+\MPnumerator=\count140
+\makeMPintoPDFobject=\count141
+\everyMPtoPDFconversion=\toks36
+) (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+** ATTENTION: \IEEEcompsoctitleabstractindextext is deprecated (line 175). Use 
+\IEEEtitleabstractindextext instead.
+LaTeX Font Info:    Try loading font information for T1+phv on input line 189.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/t1phv.fd
+File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
+)
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <8.03> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 189.
+LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 189
+.
+LaTeX Font Info:    Try loading font information for U+msa on input line 189.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 189.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+lasy on input line 189.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 189.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <9.53561> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 189.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <6.6749> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 189.
+LaTeX Font Info:    Font shape `U/lasy/b/n' in size <4.7678> not available
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 189.
+LaTeX Font Info:    Try loading font information for U+pzd on input line 189.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+** ATTENTION: \IEEEdisplaynotcompsoctitleabstractindextext is deprecated (line 
+194). Use \IEEEdisplaynontitleabstractindextext instead.
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <11.04124> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 200.
+LaTeX Font Info:    Font shape `T1/phv/bx/sc' in size <11.04124> not available
+(Font)              Font shape `T1/phv/b/sc' tried instead on input line 200.
+
+LaTeX Warning: Citation `QYWN14' on page 1 undefined on input line 210.
+
+
+LaTeX Warning: Citation `DSCB11' on page 1 undefined on input line 210.
+
+
+LaTeX Warning: Citation `Kar07' on page 1 undefined on input line 210.
+
+
+LaTeX Warning: Citation `MZLZ17' on page 1 undefined on input line 210.
+
+
+LaTeX Warning: Citation `IRHI17' on page 1 undefined on input line 212.
+
+
+LaTeX Warning: Citation `KAF17' on page 1 undefined on input line 212.
+
+
+LaTeX Warning: Citation `MTC17' on page 1 undefined on input line 212.
+
+
+LaTeX Warning: Citation `Ericsson17' on page 1 undefined on input line 212.
+
+
+LaTeX Warning: Citation `GDMW15' on page 1 undefined on input line 212.
+
+
+pdfTeX warning (Object streams): \pdfobjcompresslevel > 0 requires \pdfminorver
+sion > 4. Object streams disabled now.
+[1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
+
+LaTeX Warning: Reference `' on page 2 undefined on input line 275.
+
+
+LaTeX Warning: Citation `Par94' on page 2 undefined on input line 281.
+
+
+LaTeX Warning: Citation `MP05' on page 2 undefined on input line 287.
+
+[2]
+LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <9.53561> not available
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 314.
+
+
+LaTeX Warning: Reference `' on page 3 undefined on input line 322.
+
+[3]
+LaTeX Font Info:    Font shape `T1/phv/m/it' in size <9.53561> not available
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 355.
+ [4]
+
+LaTeX Warning: Reference `' on page 5 undefined on input line 446.
+
+
+LaTeX Warning: Reference `' on page 5 undefined on input line 455.
+
+
+LaTeX Warning: Reference `' on page 5 undefined on input line 463.
+
+
+LaTeX Warning: Reference `' on page 5 undefined on input line 472.
+
+[5]
+
+LaTeX Warning: Reference `' on page 6 undefined on input line 517.
+
+
+LaTeX Warning: Reference `' on page 6 undefined on input line 525.
+
+
+LaTeX Warning: Reference `' on page 6 undefined on input line 533.
+
+
+LaTeX Warning: Reference `' on page 6 undefined on input line 533.
+
+
+LaTeX Warning: Reference `' on page 6 undefined on input line 551.
+
+
+LaTeX Warning: Reference `' on page 6 undefined on input line 559.
+
+
+LaTeX Warning: Reference `' on page 6 undefined on input line 576.
+
+
+LaTeX Warning: Reference `' on page 6 undefined on input line 584.
+
+
+LaTeX Warning: Reference `' on page 6 undefined on input line 604.
+
+
+LaTeX Warning: Reference `' on page 6 undefined on input line 613.
+
+
+LaTeX Warning: Citation `WTXW17' on page 6 undefined on input line 631.
+
+
+LaTeX Warning: Citation `SSCB17' on page 6 undefined on input line 631.
+
+
+LaTeX Warning: Citation `HJQC09' on page 6 undefined on input line 631.
+
+
+LaTeX Warning: Citation `KFMT17' on page 6 undefined on input line 633.
+
+
+LaTeX Warning: Citation `XWTW17' on page 6 undefined on input line 633.
+
+
+LaTeX Warning: Citation `HLYZ17' on page 6 undefined on input line 633.
+
+
+LaTeX Warning: Citation `HZYZ17' on page 6 undefined on input line 633.
+
+
+LaTeX Warning: Citation `LCCZ17' on page 6 undefined on input line 633.
+
+[6]
+
+LaTeX Warning: Citation `PRG17' on page 7 undefined on input line 635.
+
+
+LaTeX Warning: Citation `LOJE17' on page 7 undefined on input line 635.
+
+(./CSI-5G-v2.bbl
+
+! LaTeX Error: Something's wrong--perhaps a missing \item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 \end{thebibliography}
+                         
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+) [7
+
+] (./CSI-5G-v2.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 4852 strings out of 493014
+ 70154 string characters out of 6133351
+ 137147 words of memory out of 5000000
+ 8243 multiletter control sequences out of 15000+600000
+ 132405 words of font info for 148 fonts, out of 8000000 for 9000
+ 1144 hyphenation exceptions out of 8191
+ 38i,9n,26p,2141b,300s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texl
+ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/
+2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/201
+6/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016
+/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2016/texmf-
+dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2016/texmf-dist/fo
+nts/type1/urw/helvetic/uhvro8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/ty
+pe1/urw/times/utmb8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/ti
+mes/utmr8a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/times/utmri8
+a.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on CSI-5G-v2.pdf (7 pages, 189994 bytes).
+PDF statistics:
+ 83 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
